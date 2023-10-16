@@ -1,23 +1,22 @@
 #include "shell.h"
 
 /**
- * interactive - returns true if shell is interactive mode
+ * interactive_mode - returns true if shell is interactive mode
  * @info: struct address
- * Ramatu _Abubakar & Richard Samo
  * Return: 1 if interactive mode, 0 otherwise
  */
-int interactive(info_t *info)
+int interactive_mode(info_t *info)
 {
 	return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
 
 /**
- * is_delim - checks if character is a delimeter
- * @c: the char to check
- * @delim: the delimeter string
+ * if_delimeter - checks if character is a delimeter
+ * @c: the char
+ * @delim: delimeter
  * Return: 1 if true, 0 if false
  */
-int is_delim(char c, char *delim)
+int if_delimeter(char c, char *delim)
 {
 	while (*delim)
 		if (*delim++ == c)
@@ -26,12 +25,12 @@ int is_delim(char c, char *delim)
 }
 
 /**
- * _isalpha - checks for alphabetic character
- * @c: The character to input
+ * if_alpha - checks for alphabetic character
+ * @c: character
  * Return: 1 if c is alphabetic, 0 otherwise
  */
 
-int _isalpha(int c)
+int if_alpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
@@ -41,8 +40,8 @@ int _isalpha(int c)
 
 /**
  * _atoi - converts a string to an integer
- * @s: the string to be converted
- * Return: 0 if no numbers in string, converted number otherwise
+ * @s: the string
+ * Return: 0 if no numbers in string
  */
 
 int _atoi(char *s)
