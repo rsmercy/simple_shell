@@ -16,7 +16,7 @@ int hsh(info_t *info, char **av)
 	{
 		clear_info(info);
 		if (interactive_mode(info))
-			put_string("ramatu$ ");
+			put_string("$ ");
 		put_character(BUF_FLUSH);
 		r = get_input(info);
 		if (r != -1)
