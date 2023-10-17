@@ -2,10 +2,10 @@
 
 /**
  * hsh - main shell loop
- * @info: the parameter & return info struct
- * @av: the argument vector from main()
+ * @info: the parameter
+ * @av: the argument vector
  * Ramatu Abubakar & Richard Samo
- * Return: 0 on success, 1 on error, or error code
+ * Return: 0 on success, 1 on error
  */
 int hsh(info_t *info, char **av)
 {
@@ -16,7 +16,7 @@ int hsh(info_t *info, char **av)
 	{
 		clear_info(info);
 		if (interactive_mode(info))
-			_puts("ramatu@richard(shell)$ ");
+			put_string("ramatu$ ");
 		put_character(BUF_FLUSH);
 		r = get_input(info);
 		if (r != -1)
